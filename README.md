@@ -16,34 +16,34 @@ Simple [latin square](https://en.wikipedia.org/wiki/Latin_square) generator from
 
 ## Installation
 
-In node, from the root of your project folder type `npm install --save latin-square`.
+In node, from the root of the project folder type `npm install --save latin-square`.
 
 
 ## usage
 
 The function takes the desired elements as parameter and returns a row-generating function
 ```
-	latinSquare = require('latin-square')
-	var sampler = latinSquare([0,1,2])
-	sampler()  // example [1,0,2]
-	sampler()  // example [2,1,0]
-	sampler()  // example [0,2,1]
-	sampler()  // null the combinations have been exhausted
+  latinSquare = require('latin-square')
+  var sampler = latinSquare([0,1,2])
+  sampler()  // example [1,0,2]
+  sampler()  // example [2,1,0]
+  sampler()  // example [0,2,1]
+  sampler()  // null the combinations have been exhausted
 ```
 
 For example, the following code would generate a random *9x9 Sudoku*:
 ```
-	var latinSquare = require('latin-square')
-	var elements = [0,1,2,3,4,5,6,7,8,9]
-	var makeRow = LatinSquare(elements)
+  var latinSquare = require('latin-square')
+  var elements = [0,1,2,3,4,5,6,7,8,9]
+  var makeRow = LatinSquare(elements)
 
-	var sudoku = elements.map(makeRow)
+  var sudoku = elements.map(makeRow)
 ```
 
 
 ## Test
 
-In node, from the root of your project folder type `npm test`.
+In node, from the root of the project folder type `npm test`.
 (the test are not included in the npm package and must be cloned from the repository)
 
 
