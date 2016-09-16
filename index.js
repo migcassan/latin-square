@@ -19,7 +19,7 @@ function latinSquare (row) {
 			vSort = shuffle(hSort)
 
 	function nextRow (tgt) {
-		if (rowCount === sN) return {done: true}
+		if (rowCount === sN) return (tgt = null)
 		if (Array.isArray(tgt)) tgt.length = sN
 		else tgt = Array(sN)
 
@@ -30,10 +30,10 @@ function latinSquare (row) {
 		}
 		rowCount++
 
-		return {value: tgt}
+		return tgt
 	}
 
-	return {next: nextRow}
+	return nextRow
 }
 function sequence(n) {
 	for (var i = 0, a=Array(n); i < n; ++i) a[i] = i

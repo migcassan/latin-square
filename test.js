@@ -9,12 +9,12 @@ var sampler = latinSquare(samples)
 
 c('get a new row', function() {
 	sampler = latinSquare(samples)
-	c('===', sampler.next().value.length, N)
+	c('===', sampler().length, N)
 })
 c('add samples to an existing array', function() {
 	var arr = []
 	sampler = latinSquare(samples)
-	sampler.next(arr)
+	sampler(arr)
 	c('===', arr.length, N)
 })
 c('unique row and col combinations', function() {
@@ -27,14 +27,14 @@ c('unique row and col combinations', function() {
 	c('==', uniqueInCol([[2,1],[2,2]]), false)
 
 	sampler = latinSquare(samples)
-	for (var i = 0; i < N; ++i) { mat[i] = sampler.next().value }
+	for (var i = 0; i < N; ++i) { mat[i] = sampler() }
 	c('==', uniqueInRow(mat), true)
 	c('==', uniqueInRow(mat), true)
 })
-c('iterator ends when samples are exhausted', function() {
+c('ends when samples are exhausted', function() {
 	sampler = latinSquare(samples)
-	for (var i = 0; i < N; ++i) sampler.next()
-	c('===', sampler.next().done, true)
+	for (var i = 0; i < N; ++i) sampler()
+	c('===', sampler(), null)
 })
 function sequence(n) {
 	for (var i=0, a=[]; i<n; ++i) a[i] = i+1
