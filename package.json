@@ -1,27 +1,30 @@
 {
-  "name": "latin-square",
-  "version": "1.0.0",
-  "description": "sudoku-style matrix generator with unique elements in each row and columns",
-  "author": "Hugo Villeneuve",
-  "license": "MIT",
-  "keywords": [
-    "sudoku",
-    "latin",
-    "hypercube",
-    "hyperplane"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hville/latin-square"
-  },
-  "main": "./index.js",
-  "dependencies": {
-    "array-shuffle": "^1.0.1"
-  },
-  "devDependencies": {
-    "cotest": "^1.0.1"
-  },
-  "scripts": {
-    "test": "node ./test.js | untap"
-  }
+	"name": "latin-square",
+	"version": "1.0.0",
+	"description": "sudoku-style matrix generator with unique elements in each row and columns",
+	"author": "Hugo Villeneuve",
+	"license": "MIT",
+	"keywords": [
+		"sudoku",
+		"latin",
+		"hypercube",
+		"hyperplane"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hville/latin-square"
+	},
+	"main": "./index.js",
+	"dependencies": {
+		"array-shuffle": "^1.0.1"
+	},
+	"devDependencies": {
+		"cotest": "^1.0.1"
+	},
+	"scripts": {
+		"test": "node ./test.js"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	}
 }
