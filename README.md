@@ -1,11 +1,13 @@
-
 # latin-square
 
-• [Introduction](#introduction) • [Installation](#installation) • [Usage](#usage) • [Test](#test) • [License](#license)
+• [Introduction](#introduction) • [Installation](#installation) • [Usage](#usage) • [API](#api) • [Test](#test) • [License](#license)
 
 ## Introduction
 
-Simple [latin square](https://en.wikipedia.org/wiki/Latin_square) generator from an initial row of elements. The function creates and returns a row generating function. On every call, the created row generating function returns the provided samples in a random order but meeting the latin-square restrictions:
+Simple [latin square](https://en.wikipedia.org/wiki/Latin_square) generator from an initial row of elements.
+The function creates and returns a row generating function.
+On every call, the created row generating function returns the provided samples in a random order
+but meeting the latin-square restrictions:
 
 * each items will only be in one row
 * each item will only be in one column
@@ -35,6 +37,17 @@ var makeRow = LatinSquare(elements)
 
 var sudoku = elements.map(makeRow)
 ```
+
+## API
+
+* latinSquare: `Array => Sampler`
+  * takes an array of anything and returns a `Sampler` function. e.g: `var sampler = latinSquare(['Fire','Earth','Water', 'Air'])`
+
+* Sampler: `([array || count]) => Array`
+  * if no arguments provided, returns a new Array with the shuffled inputs. e.g: `var sample = sampler()`
+  * if an array is provided, the target array will be filled with shuffled inputs (oversized arrays are resized)
+  * if a number smaller than the initial source array is provided, that number of samples will be returned e.g: `var sample = sampler(2)`
+
 
 ## Test
 

@@ -10,12 +10,14 @@ var sampler = latinSquare(samples)
 c('get a new row', function() {
 	sampler = latinSquare(samples)
 	c('===', sampler().length, N)
+	c('===', sampler(3).length, 3)
 })
 c('add samples to an existing array', function() {
-	var arr = []
+	var len = 3,
+			arr = Array(len)
 	sampler = latinSquare(samples)
-	sampler(arr)
-	c('===', arr.length, N)
+	c('===', sampler(arr).length, len)
+	c('===', arr.length, len)
 })
 c('unique row and col combinations', function() {
 	var mat = []

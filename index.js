@@ -18,22 +18,22 @@ function latinSquare (row) {
 	var hSort = shuffle(sequence(sN)),
 			vSort = shuffle(hSort)
 
-	function nextRow (tgt) {
-		if (rowCount === sN) return (tgt = null)
-		if (Array.isArray(tgt)) tgt.length = sN
-		else tgt = Array(sN)
+	return function nextRow (countORtarget) {
+		if (rowCount === sN) return countORtarget = null
+		var target = Array.isArray(countORtarget) ? countORtarget
+			: (countORtarget >= 0) ? Array(countORtarget)
+			: Array(sN)
+		if (target.length > sN) target.length = sN
 
-		for (var i = 0; i < sN; ++i){
+		for (var i = 0; i < target.length; ++i) {
 			var idx = hSort[i] + vSort[rowCount]
 			if (idx >= sN) idx -= sN
-			tgt[i] = row[ idx ]
+			target[i] = row[idx]
 		}
 		rowCount++
 
-		return tgt
+		return target
 	}
-
-	return nextRow
 }
 function sequence(n) {
 	for (var i = 0, a=Array(n); i < n; ++i) a[i] = i
