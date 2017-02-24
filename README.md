@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD012 MD022 MD024 MD026 MD032 MD041 -->
+
 # latin-square
 
 • [Introduction](#introduction) • [Installation](#installation) • [Usage](#usage) • [API](#api) • [Test](#test) • [License](#license)
