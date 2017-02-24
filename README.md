@@ -56,4 +56,4 @@ In node, from the root of the project folder type `npm test`.
 
 ## License
 
-Released under the [MIT License](http://www.opensource.org/licenses/MIT)
+[MIT](http://www.opensource.org/licenses/MIT) © [Hugo Villeneuve](https://github.com/hville)

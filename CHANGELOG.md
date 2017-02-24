@@ -7,7 +7,7 @@
 
 ## [Unreleased]
 ~~Removed, Changed, Deprecated, Added, Fixed, Security~~
-
+- one fewer array created
 
 ## [2.0.0] - 2016-12-31
 ### Changed

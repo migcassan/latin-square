@@ -2,7 +2,7 @@
 var c = require('cotest')
 var latinSquare = require('./index')
 
-var N = 8,
+var N = 37,
 		samples = sequence(N)
 
 var sampler = latinSquare(samples)

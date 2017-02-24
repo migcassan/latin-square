@@ -1,5 +1,3 @@
-var shuffle = require('array-shuffle')
-
 module.exports = latinSquare
 
 /**
@@ -16,7 +14,7 @@ function latinSquare (row) {
 
 	// prepare array of row and col indices for pre-sorting
 	var hSort = shuffle(sequence(sN)),
-			vSort = shuffle(hSort)
+			vSort = shuffle(hSort.slice())
 
 	return function nextRow (countORtarget) {
 		if (rowCount === sN) return countORtarget = null
@@ -38,4 +36,15 @@ function latinSquare (row) {
 function sequence(n) {
 	for (var i = 0, a=Array(n); i < n; ++i) a[i] = i
 	return a
+}
+// modified from https://github.com/sindresorhus/array-shuffle
+function shuffle(arr) {
+	var len = arr.length
+	while (len) {
+		var rnd = Math.floor(Math.random() * len--)
+		var tmp = arr[len]
+		arr[len] = arr[rnd]
+		arr[rnd] = tmp
+	}
+	return arr
 }
