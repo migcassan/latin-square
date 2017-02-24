@@ -1,6 +1,6 @@
 {
   "name": "latin-square",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "sudoku-style matrix generator with unique elements in each row and columns",
   "author": "Hugo Villeneuve",
   "license": "MIT",
@@ -15,9 +15,7 @@
     "url": "https://github.com/hville/latin-square"
   },
   "main": "./index.js",
-  "dependencies": {
-    "array-shuffle": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cotest": "^2.0.2"
   },

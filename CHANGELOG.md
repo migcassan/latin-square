@@ -7,9 +7,13 @@
 
 ## [Unreleased]
 ~~Removed, Changed, Deprecated, Added, Fixed, Security~~
+
+
+## [2.0.2] - 2017-02-25
+### Changed
+- Removed `array-shuffle` dependency and incorporated the small needed part
 - one fewer array created
 
-## [2.0.1] - 2017-02-25
 ### Fixed
 - Allow for smaller output rows i.e. sampler(Array[3]) OR sampler(3). Oversized inputs are rescaled to the samplle size
 - Updated testing dependency
