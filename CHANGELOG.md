@@ -9,6 +9,11 @@
 ~~Removed, Changed, Deprecated, Added, Fixed, Security~~
 
 
+## [2.0.3] - 2017-02-25
+### Changed
+- exposed the validation function used in testing (thanks to [@finwo](https://github.com/finwo))
+
+
 ## [2.0.2] - 2017-02-25
 ### Changed
 - Removed `array-shuffle` dependency and incorporated the small needed part

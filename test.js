@@ -1,6 +1,7 @@
 'use strict'
 var c = require('cotest')
 var latinSquare = require('./index')
+var validate = require('./validate')
 
 var N = 37,
 		samples = sequence(N)
@@ -23,15 +24,15 @@ c('unique row and col combinations', function() {
 	var mat = []
 
 	//avoid false positives
-	c('==', uniqueInRow([[1,2],[2,1]]), true)
-	c('==', uniqueInRow([[1,1],[2,1]]), false)
-	c('==', uniqueInCol([[2,1],[1,2]]), true)
-	c('==', uniqueInCol([[2,1],[2,2]]), false)
+	c('===', validate([[1,2],[2,1]]), '')
+	c('!==', validate([[1,1],[2,1]]), '')
+	c('===', validate([[2,1],[1,2]]), '')
+	c('!==', validate([[2,1],[2,2]]), '')
 
 	sampler = latinSquare(samples)
 	for (var i = 0; i < N; ++i) { mat[i] = sampler() }
-	c('==', uniqueInRow(mat), true)
-	c('==', uniqueInRow(mat), true)
+	c('===', validate(mat), '')
+	c('===', validate(mat), '')
 })
 c('ends when samples are exhausted', function() {
 	sampler = latinSquare(samples)
@@ -41,23 +42,4 @@ c('ends when samples are exhausted', function() {
 function sequence(n) {
 	for (var i=0, a=[]; i<n; ++i) a[i] = i+1
 	return a
-}
-//Convention[row][col]
-function uniqueInRow(mat) {
-	for (var row = 0; row < mat.length; ++row) {
-		for (var col = 0; col < mat.length; ++col) {
-			var val = mat[row][col]
-			for (var i=row+1; i<mat.length; ++i) if (mat[i][col] === val) return false
-		}
-	}
-	return true
-}
-function uniqueInCol(mat) {
-	for (var row = 0; row < mat.length; ++row) {
-		for (var col = 0; col < mat.length; ++col) {
-			var val = mat[row][col]
-			for (var j=col+1; j<mat.length; ++j) if (mat[row][j] === val) return false
-		}
-	}
-	return true
 }
