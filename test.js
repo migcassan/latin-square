@@ -43,3 +43,46 @@ function sequence(n) {
 	for (var i=0, a=[]; i<n; ++i) a[i] = i+1
 	return a
 }
+
+c('Validating non-array', function() {
+	c('===', validate('Latin square'), 'Not an array');
+})
+
+c('Validating non-2D array', function() {
+	c('===', validate( ['Latin square'] ), 'Not a valid 2D array');
+})
+
+c('Validating empty array', function() {
+	c('===', validate( [] ), 'Invalid empty matrix');
+})
+
+c('Validating valid square', function() {
+	c('===', validate([ [0, 1, 2, 3],
+											[2, 0, 3, 1],
+											[3, 2, 1, 0],
+											[1, 3, 0, 2] ]), '');
+})
+
+c('Validating non-square subject', function() {
+	c('===', validate([ [0, 1, 2, 3],
+											[2, 0, 3, 1],
+											[3, 2, 1, 0] ]), 'Not a valid 2D square array');
+	c('===', validate([ [0, 1, 2, 3],
+											[2, 0, 3, 1, 2],
+											[3, 2, 1, 0],
+											[1, 3, 0, 2] ]), 'Not a valid 2D square array');
+})
+
+c('Validating duplicate in column', function() {
+	c('===', validate([ [0, 4, 2, 3],
+											[2, 0, 3, 1],
+											[3, 2, 1, 0],
+											[1, 4, 0, 2] ]), '4 repeated in column 1');
+})
+
+c('Validating duplicate in row', function() {
+	c('===', validate([ [0, 1, 2, 3],
+											[2, 0, 3, 1],
+											[4, 2, 1, 4],
+											[1, 3, 0, 2] ]), '4 repeated in row 2');
+})

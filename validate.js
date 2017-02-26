@@ -1,5 +1,5 @@
 var NOT_AN_ARRAY = 'Not an array',
-		EMPTY_ERROR = 'Not a valid size array',
+		EMPTY_ERROR = 'Invalid empty matrix',
 		NOT_A_MATRIX = 'Not a valid 2D array',
 		NOT_SQUARE = 'Not a valid 2D square array',
 		COL_DUPLICATE = ' repeated in column ',
