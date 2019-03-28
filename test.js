@@ -3,6 +3,9 @@ var c = require('cotest')
 var latinSquare = require('./index')
 var validate = require('./validate')
 
+console.log(" esta es mi RAMA DEVELOPE")
+
+console.log("Continuo trabajando en mi Rama develop. Luego voy a crear otra rama y bajar los cambios de develope a esta rama.")
 var N = 37,
 		samples = sequence(N)
 
